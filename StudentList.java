@@ -80,5 +80,8 @@ public class StudentList {
             }
             System.out.println("Data Loaded.");
         }
+        else{
+            System.out.println("Usage:a|c|r|+Studenti|?StudentI");
+        }
     }
 }
