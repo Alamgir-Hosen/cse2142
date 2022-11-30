@@ -31,8 +31,7 @@ public class StudentList {
             System.out.println("Loading data ...");
             try {
                 BufferedReader bufferedReader = getBufferedReader();
-                String line = bufferedReader.readLine();
-                String studentNames[] = line.split(constants.StudentEntryDelimiter);
+                String studentNames[] = bufferedReader.readLine().split(constants.StudentEntryDelimiter);
                 for (String studentName : studentNames) {
                     System.out.println(studentName.trim());
                 }
@@ -43,9 +42,7 @@ public class StudentList {
             System.out.println("Loading data ...");
             try {
                 BufferedReader bufferedReader = getBufferedReader();
-                String line = bufferedReader.readLine();
-                System.out.println(line);
-                String studentNames[] = line.split(constants.StudentEntryDelimiter);
+                String studentNames[] = bufferedReader.readLine().split(constants.StudentEntryDelimiter);
                 Random random = new Random();
                 int studentNumber = random.nextInt(4);
                 System.out.println(studentNames[studentNumber].trim());
@@ -59,8 +56,7 @@ public class StudentList {
                 String newStudentName = args[0].substring(1);
                 Date date = new Date();
                 String dateformate = "dd/MM/yyyy-hh:mm:ss a";
-                DateFormat dateFormat = new SimpleDateFormat(dateformate);
-                String fd = dateFormat.format(date);
+                String fd = new SimpleDateFormat(dateformate).format(date);
                 bufferedWriter.write(constants.StudentEntryDelimiter + newStudentName + "\nList last updated on " + fd);
                 bufferedWriter.close();
             } catch (Exception e) {
@@ -85,8 +81,7 @@ public class StudentList {
             System.out.println("Loading data ...");
             try {
                 BufferedReader bufferedReader = getBufferedReader();
-                String line = bufferedReader.readLine();
-                String names[] = line.split(constants.StudentEntryDelimiter);
+                String names[] = bufferedReader.readLine().split(constants.StudentEntryDelimiter);
                 System.out.println(names.length / 2 + " words found");
             } catch (Exception e) {
             }
